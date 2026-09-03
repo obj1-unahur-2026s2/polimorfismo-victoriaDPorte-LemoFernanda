@@ -1,13 +1,13 @@
 import atletas.*
 
 object raqueta {
-
+  method costoElemento(atleta) {
+    return (atleta.edad() * 15).min(400)
+  }
 }
 
 object judogi {
-
-}
-
-object stick {
-
+  method costoElemento(atleta) {
+    return (atleta.altura() * 1.5).max(200)
+  }
 }

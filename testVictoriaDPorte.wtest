@@ -2,3 +2,39 @@ import atletas.*
 import elementos.*
 import disciplinas.*
 
+describe "Casos de prueba de Victora D Porte" {
+
+    // PARETO
+ test "Victoria se quiere parecer a Pareto"{
+ victoria.cambiarAltura(150)
+ victoria.cambiarDisciplina(judo)
+ victoria.cambiarElemento(judogi)
+ 
+    //cuentas:
+    // judo entrenadores (2) * Comité valor (10) = 20
+    // costo traje judgogi , altura(150) *1.5 = 225 (minimo 200)
+    // presupuesto propio =20 + 225= 245
+    // presupuesto disciplina judo = 120 * medallas de judo ganadas (1) = 120
+    // resultado del presupuesto = 245 + 120 = 365
+
+    assert.equals(365, victoria.presupuesto()) 
+}
+
+   // DELPO
+   test "Victoria se quiere parecer a Delpo"{
+   victoria.cambiarAltura(210)
+   victoria.cambiarDisciplina(tenis)
+   victoria.cambiarElemento(raqueta)
+   tenis.cambiarEntrenadores(2)
+   
+    //cuentas:
+   
+    // tenis entrenadores (2) * Comité valor (10) = 20
+    // costo de la raqueta, (edad mas costo de raqueta) (23 * 15) = 345
+    // presupuesto propio = 20 + 345 = 365 (345 es el costo de la raqueta por el año del atleta)
+    // presupuesto disciplina tenis = 200 + (3 * 5 invitados) = 215
+    // resultado del presupuesto = 365 + 215 = 580
+
+    assert.equals(580, victoria.presupuesto())
+  
+}}
